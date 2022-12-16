@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class AIEmployee {
     private static AIEmployee employee;
 
-
     public AIEmployee() {
 
     }
@@ -35,6 +34,10 @@ public class AIEmployee {
             return true;
         }
         return false;
+    }
+
+    public void decorate() {
+
     }
 
 }

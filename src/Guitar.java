@@ -18,11 +18,8 @@ public abstract class Guitar {
         System.out.println(brand + "'s " + model + " is played by the customer.");
     }
 
-    public String toString() {
-        StringBuilder display = new StringBuilder();
-        display.append("---- ").append(brand).append(" ---- \n");
-        display.append(model).append(" \n");
-        return display.toString();
+    public String getDescription() {
+        return brand + " " + model;
     }
 
 }

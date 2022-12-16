@@ -14,7 +14,8 @@ public class GuitarStoreTestDriver_v2 {
             dislike = aiEmployee.decision();
         }
         System.out.println(guitar.cost());
-
+        guitar = new Hardcase(guitar);
+        System.out.println(guitar.cost());
 
 /*        System.out.print("AI Employee: Great! Would you like to have a hardcase(200$) " +
                 "or softcase(100$) for your guitar? ");

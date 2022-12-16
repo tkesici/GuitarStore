@@ -1,2 +1,5 @@
-public class AccessoriesDecorator {
+public abstract class AccessoriesDecorator extends Guitar {
+
+    public abstract String getDescription();
+
 }
