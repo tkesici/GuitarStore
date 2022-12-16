@@ -15,8 +15,7 @@ public abstract class Guitar {
     public abstract double cost();
 
     public void play() {
-        System.out.println(">>> " + brand + "'s " + model + " is picked up by AI and " +
-                "given to the customer.");
+        System.out.println(brand + "'s " + model + " is played by the customer.");
     }
 
     public String toString() {
