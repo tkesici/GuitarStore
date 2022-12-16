@@ -4,31 +4,20 @@ public class GuitarStoreTestDriver_v2 {
         GuitarStore store = new IstanbulGuitarStore();
         AIEmployee aiEmployee = AIEmployee.getEmployee();
 
-        Guitar guitar = null;
+        Guitar guitar = new NullGuitar();
         boolean dislike = true;
 
-
         aiEmployee.greeting();
-        while(dislike){
+
+        while (dislike) {
             guitar = store.playGuitar(aiEmployee.choice());
+            if (guitar.getDescription().equals("Null Guitar")) {
+                aiEmployee.nullGuitar();
+            }
             dislike = aiEmployee.decision();
         }
-        System.out.println(guitar.cost());
-        guitar = new Hardcase(guitar);
-        System.out.println(guitar.cost());
 
-/*        System.out.print("AI Employee: Great! Would you like to have a hardcase(200$) " +
-                "or softcase(100$) for your guitar? ");
-        String guitarcase = in.next();
-        switch (guitarcase.charAt(0)) {
-            case ('h'):
-                System.out.println("+200$");
-            case ('s'):
-                System.out.println("+100$");
-            default:
-                System.out.println("+0$");
-
-        }*/
+        aiEmployee.decorate(guitar);
     }
 
 }

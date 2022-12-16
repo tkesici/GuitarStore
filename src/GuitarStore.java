@@ -1,10 +1,13 @@
 public abstract class GuitarStore {
 
-    public Guitar playGuitar(String type) {
+    public Guitar playGuitar(String type) throws RuntimeException {
+
+        Guitar nullGuitar = new NullGuitar();
         Guitar guitar;
-
         guitar = chooseGuitar(type);
-
+        if(guitar==null){
+            return nullGuitar;
+        }
         guitar.play();
         return guitar;
 
