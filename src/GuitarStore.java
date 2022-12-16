@@ -2,16 +2,16 @@ public abstract class GuitarStore {
 
     public Guitar playGuitar(String type) throws RuntimeException {
 
-        Guitar nullGuitar = new NullGuitar();
         Guitar guitar;
         guitar = chooseGuitar(type);
-        if(guitar==null){
-            return nullGuitar;
+        if (guitar == null) {
+            return new NullGuitar();
         }
         guitar.play();
         return guitar;
 
     }
+
     protected abstract Guitar chooseGuitar(String type);
 
     public String getName() {
