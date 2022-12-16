@@ -38,12 +38,32 @@ public class AIEmployee {
         return false;
     }
 
-    public void accessories(Guitar guitar) {
-
+    public Guitar accessories(Guitar guitar) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("AI Employee: What would you like to add? ");
+        String decorate = in.nextLine();
+        if (decorate.equals("Hardcase")) {
+            guitar = new Hardcase(guitar);
+            return guitar;
+        } else if (decorate.equals("Softcase")) {
+            guitar = new Softcase(guitar);
+            return guitar;
+        } else if (decorate.equals("Cable")) {
+            guitar = new Cable(guitar);
+            return guitar;
+        } else if (decorate.equals("Pick")) {
+            System.out.println("AI Employee: How many is enough? ");
+            guitar = new Pick(guitar, in.nextInt());
+            return guitar;
+        } else {
+            System.out.println("AI Employee: Sorry, we don't currently have this product.");
+            return guitar;
+        }
     }
 
     public void decorate(Guitar guitar) {
         Scanner in = new Scanner(System.in);
+        boolean continueAsking = true;
         System.out.print("AI Employee: " + guitar.getName() + "? Good taste!");
         System.out.println("\nWould you like to buy some accessories with your brand new guitar? ");
         String decision = in.nextLine();
@@ -51,25 +71,18 @@ public class AIEmployee {
             System.out.println("AI Employee: As you please!" + bill(guitar));
             return;
         }
-        System.out.println("AI Employee: Feel free to share with me: ");
-        String decorate = in.nextLine();
-        if (decorate.equals("Hardcase")) {
-            guitar = new Hardcase(guitar);
-            System.out.println(bill(guitar));
-        } else if (decorate.equals("Softcase")) {
-            guitar = new Softcase(guitar);
-            System.out.println(bill(guitar));
-        } else if (decorate.equals("Cable")) {
-            guitar = new Cable(guitar);
-            System.out.println(bill(guitar));
-        } else if (decorate.equals("Pick")) {
-            System.out.println("AI Employee: How many is enough? ");
-            guitar = new Pick(guitar, in.nextInt());
-            System.out.println(bill(guitar));
-        } else {
-            System.out.println("AI Employee: Sorry, we don't currently have this product."
-                    + bill(guitar));
+        while (continueAsking) {
+            guitar = accessories(guitar);
+            System.out.println("AI Employee: Do you want to add something else? ");
+            String response = in.nextLine();
+            if (response.charAt(0) == 'y' || response.charAt(0) == 'Y') {
+                ;
+            } else {
+                continueAsking = false;
+            }
         }
+
+        System.out.println(bill(guitar));
     }
 
     public void nullGuitar() {
