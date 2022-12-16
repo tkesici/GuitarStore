@@ -5,7 +5,7 @@ import static java.lang.System.exit;
 public class AIEmployee {
     private static AIEmployee employee;
 
-    public AIEmployee() {
+    private AIEmployee() {
 
     }
 
