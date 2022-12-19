@@ -4,9 +4,6 @@ public abstract class GuitarStore {
 
         Guitar guitar;
         guitar = chooseGuitar(type);
-        if (guitar == null) {
-            return new NullGuitar();
-        }
         guitar.play();
         return guitar;
 
