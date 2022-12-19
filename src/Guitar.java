@@ -15,7 +15,7 @@ public abstract class Guitar {
     public abstract double cost();
 
     public void play() {
-        if(!getDescription().equals("Null Guitar")){
+        if(!isNull()){
             System.out.println(brand + "'s " + model + " is played by the customer.");
         }
     }
