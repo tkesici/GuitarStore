@@ -2,11 +2,20 @@ public class GuitarStoreTestDriver {
 
     public static void main(String[] args) {
 
-        GuitarStore store = new IzmirGuitarStore();
-        Guitar guitar = store.playGuitar("ESP");
-        System.out.println(guitar.getDescription() + " " + guitar.cost()+"$");
-        guitar = new Hardcase(guitar);
-        System.out.println(guitar.getDescription() + " " + guitar.cost()+"$");
+        GuitarStore store = new IstanbulGuitarStore();
+        AIEmployee aiEmployee = AIEmployee.getEmployee();
+
+        Guitar guitar = new NullGuitar();
+        boolean dislike = true;
+
+        aiEmployee.greeting();
+
+        while (dislike) {
+            guitar = store.playGuitar(aiEmployee.choice());
+            dislike = aiEmployee.decision(guitar);
+        }
+
+        aiEmployee.decorate(guitar);
 
     }
 
