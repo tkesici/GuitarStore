@@ -12,7 +12,7 @@ public class IstanbulGuitarStore extends GuitarStore {
         } else if (type.equals("ESP")) {
             return new IstanbulESP();
         } else
-            return null;
+            return new NullGuitar();
     }
 
     public String getName() {

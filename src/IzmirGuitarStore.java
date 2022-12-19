@@ -12,7 +12,7 @@ public class IzmirGuitarStore extends GuitarStore {
             return new IzmirJackson();
         } else if (type.equals("ESP")) {
             return new IzmirESP();
-        } else return null;
+        } else return new NullGuitar();
 
     }
 
