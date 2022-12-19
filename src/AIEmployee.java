@@ -28,7 +28,10 @@ public class AIEmployee {
         return choice;
     }
 
-    public boolean decision() {
+    public boolean decision(Guitar guitar) {
+        if (guitar.isNull()) {
+            nullGuitar();
+        }
         Scanner in = new Scanner(System.in);
         System.out.print("AI Employee: Well, did you like it? ");
         String decision = in.nextLine();
