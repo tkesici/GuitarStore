@@ -15,11 +15,17 @@ public abstract class Guitar {
     public abstract double cost();
 
     public void play() {
-        System.out.println(brand + "'s " + model + " is played by the customer.");
+        if(!getDescription().equals("Null Guitar")){
+            System.out.println(brand + "'s " + model + " is played by the customer.");
+        }
     }
 
     public String getDescription() {
         return brand + " " + model;
+    }
+
+    public boolean isNull(){
+        return false;
     }
 
 }
