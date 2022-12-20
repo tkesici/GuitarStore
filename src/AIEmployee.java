@@ -23,6 +23,7 @@ public class AIEmployee {
 
     public String choice() {
         Scanner in = new Scanner(System.in);
+        System.out.println("(ESP, Gibson, Jackson, Fender)");
         System.out.print("Please let me know if there is any guitar you would like to try: ");
         String choice = in.nextLine();
         return choice;
@@ -47,12 +48,15 @@ public class AIEmployee {
         String decorate = in.nextLine();
         if (decorate.equals("Hardcase")) {
             guitar = new Hardcase(guitar);
+            System.out.print("AI Employee: Hardcase added.\n");
             return guitar;
         } else if (decorate.equals("Softcase")) {
             guitar = new Softcase(guitar);
+            System.out.print("AI Employee: Softcase added.\n");
             return guitar;
         } else if (decorate.equals("Cable")) {
             guitar = new Cable(guitar);
+            System.out.print("AI Employee: Cable added.\n");
             return guitar;
         } else if (decorate.equals("Pick")) {
             System.out.print("AI Employee: How many is enough? ");
@@ -68,6 +72,7 @@ public class AIEmployee {
         Scanner in = new Scanner(System.in);
         boolean continueAsking = true;
         System.out.print("AI Employee: " + guitar.getName() + "? Good taste!\n");
+        System.out.println("(Hardcase, Softcase, Cable, Pick)");
         System.out.print("Would you like to buy some accessories with your brand new guitar? ");
         String decision = in.nextLine();
         if (decision.charAt(0) == 'n' || decision.charAt(0) == 'N') {

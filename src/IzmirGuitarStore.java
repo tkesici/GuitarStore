@@ -1,6 +1,5 @@
 public class IzmirGuitarStore extends GuitarStore {
 
-
     @Override
     protected Guitar chooseGuitar(String type) {
 
@@ -19,4 +18,7 @@ public class IzmirGuitarStore extends GuitarStore {
     public String getName() {
         return "Izmir";
     }
+
 }
+
+
